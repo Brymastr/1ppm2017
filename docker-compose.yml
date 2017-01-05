@@ -1,0 +1,81 @@
+nginx:
+  image: nginx
+  container_name: shortn-nginx
+  volumes:
+    - /etc/nginx/conf.d
+    - /etc/nginx/vhost.d
+    - /usr/share/nginx/html
+    - /volumes/shortn/certs:/etc/nginx/certs:ro
+  ports:
+    - '80:80'
+    - '443:443'
+    
+nginx-gen:
+  image: jwilder/docker-gen
+  container_name: shortn-nginx-gen
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ./nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
+  volumes_from:
+    - shortn-nginx
+  entrypoint: /usr/local/bin/docker-gen -notify-sighup nginx -watch -only-exposed -wait 5s:30s /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf
+  
+letsencrypt-nginx-proxy-companion:
+  image: jrcs/letsencrypt-nginx-proxy-companion
+  container_name: letsencrypt-nginx-proxy-companion
+  volumes_from:
+    - shortn-nginx
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    - /volumes/shortn/certs:/etc/nginx/certs:rw
+  environment:
+    - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
+    
+    
+api:
+  image: 'brymastr/shortn:latest'
+  container_name: shortn-api
+  links:
+    - shortn-db
+  volumes:
+    - ./conf.d/:/etc/nginx/conf.d
+    - /volumes/shortn/certs:/etc/nginx/certs:rw
+    - /var/run/docker.sock:/var/run/docker.sock
+  environment:
+    - SHORTN_DB=mongodb://db/shortn
+    - SHORTN_URL=https://short.dorsaydevelopment.ca
+
+    - VIRTUAL_HOST=short.dorsaydevelopment.ca
+    - VIRTUAL_NETWORK=nginx-proxy
+    - VIRTUAL_PORT=80
+    - LETSENCRYPT_HOST=short.dorsaydevelopment.ca
+    - LETSENCRYPT_EMAIL=dorsay@live.ca
+    - LETSENCRYPT_TEST=false
+  restart: always
+
+web:
+  image: 'brymastr/shortn-web:latest'
+  container_name: shortn-web
+  links:
+    - api
+  environment:
+    - VIRTUAL_HOST=shortn.dorsaydevelopment.ca
+    - VIRTUAL_NETWORK=nginx-proxy
+    - VIRTUAL_PORT=80
+    - LETSENCRYPT_HOST=shortn.dorsaydevelopment.ca
+    - LETSENCRYPT_EMAIL=dorsay@live.ca
+    - LETSENCRYPT_TEST=false
+
+db:
+  image: 'mongo:latest'
+  container_name: shortn-db
+  volumes:
+    - /volumes/shortn/db:/data/db
+  ports:
+    - '27017:27017'
+
+watchtower:
+  image: 'centurylink/watchtower:latest'
+  container_name: watchtower
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
