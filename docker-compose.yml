@@ -17,14 +17,14 @@ nginx-gen:
     - /var/run/docker.sock:/tmp/docker.sock:ro
     - ./nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
   volumes_from:
-    - shortn-nginx
+    - nginx
   entrypoint: /usr/local/bin/docker-gen -notify-sighup nginx -watch -only-exposed -wait 5s:30s /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf
   
 letsencrypt-nginx-proxy-companion:
   image: jrcs/letsencrypt-nginx-proxy-companion
   container_name: letsencrypt-nginx-proxy-companion
   volumes_from:
-    - shortn-nginx
+    - nginx
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /volumes/shortn/certs:/etc/nginx/certs:rw
@@ -36,7 +36,7 @@ api:
   image: 'brymastr/shortn:latest'
   container_name: shortn-api
   links:
-    - shortn-db
+    - db
   volumes:
     - ./conf.d/:/etc/nginx/conf.d
     - /volumes/shortn/certs:/etc/nginx/certs:rw
