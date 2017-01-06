@@ -29,7 +29,7 @@ letsencrypt-nginx-proxy-companion:
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /volumes/shortn/certs:/etc/nginx/certs:rw
   environment:
-    - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
+    - NGINX_DOCKER_GEN_CONTAINER=shortn-nginx-gen
     
     
 api:
