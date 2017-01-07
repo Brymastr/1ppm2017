@@ -45,10 +45,10 @@ api:
     - SHORTN_DB=mongodb://db/shortn
     - SHORTN_PORT=80
 
-    - VIRTUAL_HOST=short.dorsaydevelopment.ca
+    - VIRTUAL_HOST=ziip.ca
     - VIRTUAL_NETWORK=nginx-proxy
     - VIRTUAL_PORT=80
-    - LETSENCRYPT_HOST=short.dorsaydevelopment.ca
+    - LETSENCRYPT_HOST=ziip.ca
     - LETSENCRYPT_EMAIL=dorsay@live.ca
     - LETSENCRYPT_TEST=false
   restart: always
