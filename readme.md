@@ -5,9 +5,11 @@ I saw [this](https://news.ycombinator.com/item?id=13284332) post on HN at the st
 This seemed like a good opportunity for me to work on several small, fun projects and to practice quick development cycles with a simple deployment plan.
 [Here's](https://github.com/1ppm/1ppmLog) the GitHub repo with a full description of the challenge.
 
-## January
+I've set some guidlines for myself with this challenge. I want to keep the projects very doable within one month without needing to spend to much time time finish them. Lots of the projects I came up with are very small so the goal is to finish a minimum viable very quickly and then keep adding new features or simplifying the deployment process until the end of the month. This will help with my development process and hold my interest in the project until the monthly timebox dictates the absolute end of the project.
 
-[Ziip](https://github.com/Brymastr/ziip)
+## January
+GitHub - [Ziip](https://github.com/Brymastr/ziip)
+Website - [ziip.ca](http://ziip.ca/)
 - look for a short domain. It can be any odd one
 - Create a random string or random phrase to attach to the end of the domain
 - Node
@@ -17,10 +19,12 @@ This seemed like a good opportunity for me to work on several small, fun project
 - no php
 
 ## February
-Ulam's spiral
+Ulam spiral (prime spiral)
+- Numberphile video describing the idea - https://www.youtube.com/watch?v=iFuR97YcSLM
+- Wikipedia with images - http://mathworld.wolfram.com/PrimeSpiral.html
 - Rebuild from scratch using node and no jquery
 - Must be efficient as possible to be able to calculate tens of thousands of   numbers on the fly
-- Can precalculate everything 0 > x > 10^100 and save in a file or database
+- Maybe precalculate everything 0 > x > 10^100 and save in a file or database
 - New UI
 - Stretch: Mobile app
 
