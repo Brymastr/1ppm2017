@@ -8,8 +8,8 @@ ziip:
     - /volumes/ziip/certs:/etc/nginx/certs:rw
     - /var/run/docker.sock:/var/run/docker.sock
   environment:
-    - ZIIP=mongodb://db/ziip
-    - ZIIP=80
+    - ZIIP_DB=mongodb://db/ziip
+    - ZIIP_PORT=80
 
     - VIRTUAL_HOST=ziip.ca
     - VIRTUAL_NETWORK=nginx-proxy
