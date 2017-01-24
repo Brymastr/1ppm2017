@@ -19,6 +19,17 @@ ziip:
     - LETSENCRYPT_TEST=false
   restart: always
 
+spiral:
+  image: 'brymastr/spiral:latest'
+  container_name: spiral
+  environment: 
+    - VIRTUAL_HOST=spiral.dorsaydevelopment.ca
+    - VIRTUAL_NETWORK=nginx-proxy
+    - VIRTUAL_PORT=80
+    - LETSENCRYPT_HOST=spiral.dorsaydevelopment.ca
+    - LETSENCRYPT_EMAIL=dorsay@live.ca
+    - LETSENCRYPT_TEST=false
+
 # Add new projects here
 
 
