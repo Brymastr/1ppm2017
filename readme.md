@@ -43,7 +43,7 @@ Secure, encrypted, distributed journal service
 
 ## May
 React Native app
-- Alice's weird app?
+- Ideas?
 
 ## June
 Machine learning event prediction
