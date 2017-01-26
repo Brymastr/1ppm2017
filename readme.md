@@ -66,10 +66,14 @@ Canucks Messenger bot
 - Profit
 
 ## September
-undefined
+Convoy, android
+- Travel in groups and see each group member on a map
+- Plan pit-stops along a travel route
+- ExpressJS api and native Android client
 
 ## October
-undefined
+Convoy, iOS
+- Swift
 
 ## November
 undefined
