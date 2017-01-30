@@ -17,13 +17,15 @@ Website - [ziip.ca](http://ziip.ca/)
 - Docker
 - Mongo
 - no php
+- save as much info about the user as possible. Would be cool to be able to identify users without creating an account, user-agent footprint.
 
 ## February
 Ulam spiral (prime spiral)
 - Numberphile video describing the idea - https://www.youtube.com/watch?v=iFuR97YcSLM
 - Wikipedia with images - http://mathworld.wolfram.com/PrimeSpiral.html
 - Rebuild from scratch using node and no jquery
-- Must be efficient as possible to be able to calculate tens of thousands of   numbers on the fly
+- HTML5 Canvas
+- Must be efficient as possible to be able to calculate tens of thousands of numbers on the fly
 - Maybe precalculate everything 0 > x > 10^100 and save in a file or database
 - New UI
 - Stretch: Mobile app
@@ -76,7 +78,9 @@ Convoy, iOS
 - Swift
 
 ## November
-undefined
+Desktop/Mobile wallpaper changer
+- HN: http://blog.unixcat.org/?p=91
+- NLP lyrics from currently playing song and search flickr/elsewhere for images
 
 ## December
-undefined
+Do something serious with Hashicorp Vault
