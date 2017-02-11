@@ -31,12 +31,12 @@ Ulam spiral (prime spiral)
 - Stretch: Mobile app
 
 ## March
-Web parser
-- Start with one address
-- Find all attached sites
-- Parse site content
-- Save everything
-- Show connections between sites in neo4j or similar
+Foobot rewrite
+- He's getting messy
+- Allow for simpler addition of chat services
+- RabbitMQ for communication between modules
+- Modularize one docker container for each service or feature
+- foobot-core for routing and message queue
 
 ## April
 Secure, encrypted, distributed journal service
@@ -53,12 +53,12 @@ Machine learning event prediction
 - Write down every time you get sick and have some sort of model try to predict the next flu/cold season
 
 ## July
-Foobot rewrite
-- He's getting messy
-- Allow for simpler addition of chat services
-- wordnet
-- No hard-coded messages
-- Bender
+Web parser
+- Start with one address
+- Find all attached sites
+- Parse site content
+- Save everything
+- Show connections between sites in neo4j or similar
 
 ## August
 Canucks Messenger bot
