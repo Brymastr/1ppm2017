@@ -4,9 +4,7 @@ ziip:
   links:
     - db
   volumes:
-    - ./conf.d/:/etc/nginx/conf.d
-    - /volumes/ziip/certs:/etc/nginx/certs:rw
-    - /var/run/docker.sock:/var/run/docker.sock
+    - /volumes/1ppm2017/certs:/etc/nginx/certs:rw
   environment:
     - ZIIP_DB=mongodb://db/ziip
     - ZIIP_PORT=80
@@ -20,12 +18,8 @@ ziip:
   restart: always
 
 spiral:
-  image: 'brymastr/spiral:latest'
+  image: 'brymastr/spiral:v2'
   container_name: spiral
-  volumes:
-    - ./conf.d/:/etc/nginx/conf.d
-    - /volumes/spiral/certs:/etc/nginx/certs:rw
-    - /var/run/docker.sock:/var/run/docker.sock
   environment: 
     - VIRTUAL_HOST=spiral.dorsaydevelopment.ca
     - VIRTUAL_NETWORK=nginx-proxy
@@ -45,9 +39,7 @@ nginx:
     - /etc/nginx/vhost.d
     - /usr/share/nginx/html
 
-    - /volumes/ziip/certs:/etc/nginx/certs:ro
-    - /volumes/spiral/certs:/etc/nginx/certs:ro
-    # Add a new line here for each site with an ssl certificate
+    - /volumes/1ppm2017/certs:/etc/nginx/certs:ro
   ports:
     - '80:80'
     - '443:443'
@@ -68,9 +60,8 @@ letsencrypt-nginx-proxy-companion:
   volumes_from:
     - nginx
   volumes:
+    - /volumes/1ppm2017/certs:/etc/nginx/certs:rw
     - /var/run/docker.sock:/var/run/docker.sock:ro
-    - /volumes/ziip/certs:/etc/nginx/certs:rw
-    - /volumes/spiral/certs:/etc/nginx/certs:rw
   environment:
     - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
     
