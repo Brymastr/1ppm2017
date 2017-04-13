@@ -44,15 +44,19 @@ GitHub: [core](https://github.com/Brymastr/foobot/tree/rabbit), [web](https://gi
 - Add one new chat service as proof of concept (Slack probably, maybe Skype)
 
 ## April
+Docker machine, swarm mode, and Traefik  
+[GitHub](https://github.com/Brymastr/docker-machine-provisioning)
+- Write scripts for setting up docker machine
+- Use docker-machine to spin up VMs on Vultr, DigitalOcean, and Hyper-v
+- Write scripts to initialize docker swarmmode
+- Use [Traefik](https://github.com/containous/traefik) to load balance requests to scalable docker services
+
+## May
 Canucks Messenger bot
 - Access NHL API for canucks facts
 - Build it generically so that it can be repurposed for any other team
 - ???
 - Profit
-
-## May
-React Native app
-- Ideas?
 
 ## June
 Machine learning event prediction
