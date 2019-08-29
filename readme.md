@@ -5,7 +5,7 @@ I saw [this](https://news.ycombinator.com/item?id=13284332) post on HN at the st
 This seemed like a good opportunity for me to work on several small, fun projects and to practice quick development cycles with a simple deployment plan.
 [Here's](https://github.com/1ppm/1ppmLog) the GitHub repo with a full description of the challenge.
 
-I've set some guidlines for myself with this challenge. I want to keep the projects very doable within one month without needing to spend to much time time finish them. Lots of the projects I came up with are very small so the goal is to finish a minimum viable very quickly and then keep adding new features or simplifying the deployment process until the end of the month. This will help with my development process and hold my interest in the project until the monthly timebox dictates the absolute end of the project.
+I've set some guidlines for myself with this challenge. I want to keep the projects very doable within one month without needing to spend too much time to finish them. Lots of the projects I came up with are very small so the goal is to finish a minimum viable very quickly and then keep adding new features or simplifying the deployment process until the end of the month. This will help with my development process and hold my interest in the project until the monthly timebox dictates the definitive end of the project.
 
 ## January
 [GitHub](https://github.com/Brymastr/ziip)  
